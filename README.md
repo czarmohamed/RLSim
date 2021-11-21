@@ -3,8 +3,10 @@
 SimComponent: Creates a simulation of the Implemented Harvest Game in the Browser
 TestComponent: Trains a MultiAgent Reinforcement Learning Environment of the Harvest Game
 # Run 
-main.py file in the SimComponent 
-GridTestTrain.py in the TestComponent
+main.py file in the SimComponent <br />
+
+GridTestTrain.py in the TestComponent<br />
+
 # Dependencies
 mesa, Gym, Ray, tensorboard
 # Data 
