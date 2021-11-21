@@ -34,12 +34,12 @@ def setup_and_train():
         # Hyperparameter configuration 1
         config={
                     "log_level": "WARN",
-                    "num_workers": 2,
+                    "num_workers": 3,
                     "num_cpus_for_driver": 1,
                     "num_cpus_per_worker": 1,
-                    "train_batch_size": 200,
-                    "lr": 0.0001,
-                    "model":MODEL_DEFAULTS,
+                    "train_batch_size": 128,
+                    "lr": 5e-3,
+                    "model":{"fcnet_hiddens": [8, 8]},
                     "multiagent": {
                         "policies": policy_graph,
                         "policy_mapping_fn": policy_mapping_fn,
@@ -61,13 +61,13 @@ def setup_and_train():
         # Hyperparameter configuration 2
         config = {
             "log_level": "WARN",
-            "num_workers": 2,
+            "num_workers": 3,
             "num_cpus_for_driver": 1,
             "num_cpus_per_worker": 1,
             "num_sgd_iter": 10,
-            "train_batch_size": 200,
-            "lr": 0.0001,
-            "model": MODEL_DEFAULTS,
+            "train_batch_size": 128,
+            "lr": 5e-3,
+            "model":{"fcnet_hiddens": [8, 8]},
             "multiagent": {
                 "policies": policy_graph,
                 "policy_mapping_fn": policy_mapping_fn,

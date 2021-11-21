@@ -6,15 +6,22 @@ import numpy as np
 
 class TestGrid(MultiAgentEnv):
     def __init__(self):
+        # Total number of agents
         self.num_agents = 20
+        # Observation space in teh environment for each agent
         self.observation_space = gym.spaces.MultiDiscrete([20, 20])
+        # Action space 0,3 corresponds to the 4 directions N,S,E,W
         self.action_space = gym.spaces.Discrete(4)
         self.iterations = 50
+        # Variable which dictates the rate of reproduction
         self.fruit_ripening_time = 150
+        # The environment itself
         self.fruit_grid = [[random.randint(0, self.fruit_ripening_time) for c in range(20)] for r in range(20)]
 
 
     def reset(self):
+        # Re initialize the environment, signals the end of an episode
+        # resets the iterations, agent locations and fruit locations
         obs = {}
         self.dones = set()
         for i in range(self.num_agents):
@@ -27,8 +34,10 @@ class TestGrid(MultiAgentEnv):
         self.fruit_grid = [[random.randint(0, self.fruit_ripening_time) for c in range(20)] for r in range(20)]
         return obs
 
-    def cal_rewards(self, obs_dict, action_dict):
-
+    def calc_rewards(self, obs_dict, action_dict):
+        # calculates rewards for each agent
+        # calculates new observations for each agent
+        # sets the done Array
         obs = {}
         reward = {}
         dones = {}
@@ -84,9 +93,11 @@ class TestGrid(MultiAgentEnv):
         return obs, reward, dones, info
 
     def step(self, action_dict):
+        # calls the calc_rewards function
+        # increments the environment by 1 iteration
         self.iterations -= 1
         obs, rew, done, info = {}, {}, {}, {}
-        obs, rew, done, info = self.cal_rewards(self.locations, action_dict)
+        obs, rew, done, info = self.calc_rewards(self.locations, action_dict)
         if self.iterations == 0:
             done["__all__"] = True
         else:
