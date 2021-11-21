@@ -10,5 +10,5 @@ GridTestTrain.py in the TestComponent. Will run the Multi Agent Deep Reinforceme
 # Dependencies
 mesa, Gym, Ray, tensorboard, numpy
 # Data 
-stored in a local directory /ray_results\my_exp. 
+stored in a local directory /ray_results\my_exp. <br />
 To view tensorboard graphs for the training enter tensorboard --logdir=~/ray_results\my_exp\experimentfolder into the command prompt.
