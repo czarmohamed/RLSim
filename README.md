@@ -1,5 +1,5 @@
 # RLSim
-2 components 
+2 components <br />
 SimComponent: Creates a simulation of the Implemented Harvest Game in the Browser<br />
 TestComponent: Trains a MultiAgent Reinforcement Learning Environment of the Harvest Game
 # Run 
