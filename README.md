@@ -4,7 +4,6 @@ SimComponent: Creates a simulation of the Implemented Harvest Game in the Browse
 TestComponent: Trains a MultiAgent Reinforcement Learning Environment of the Harvest Game
 # Run 
 main.py file in the SimComponent. Opens browser window to display the simulation. <br />
-
 GridTestTrain.py in the TestComponent. Will run the Multi Agent Deep Reinforcement Learning Model<br />
 
 # Dependencies
